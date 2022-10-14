@@ -40,7 +40,7 @@ public class Student {
         for (Module mod : myModules){
             strng+=mod.getName()+"\n";
         }  
-        strng+="\nCourse): "+ myCourse;
+        strng+="\nCourse: "+ myCourse.getName();
         
         return strng; 
     }
