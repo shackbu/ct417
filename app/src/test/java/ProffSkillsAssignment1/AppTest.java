@@ -8,36 +8,38 @@ public class AppTest{
    
     
     
-    
-    public static void main(String[] args){
-       
-        ArrayList<Module> modList =new ArrayList<Module>();
-        ArrayList<Course> courseList = new ArrayList<Course>();
-        ArrayList<Student> studentList = new ArrayList<Student>();
-        
+    @Test
+    public void testGetUsername2() {
+        System.out.println("getUsername");
         
         LocalDate DOB=LocalDate.of(2001, 1, 8);
-        Student student1 = new Student("Bob",21, DOB,135243,modList,courseList);
-        Lecturer l1=new Lecturer("John Smith",34,DOB,676765,modList);
-        Module mod1 = new Module("data stuctures",4316,studentList,courseList,l1);
-        modList.add(mod1);
+        ArrayList<Module> modList =new ArrayList<Module>();
+        Lecturer l1=new Lecturer("JohnSmith",34,DOB,676765,modList);
         
-        //testGetUsername();
-    } 
-    
-    
-    
-    public void testGetUsername() {
-        
-        System.out.println("equal");
-        
-        int[] a = null;
-        int[] b = null;
-        boolean expResult = false;
-        boolean result = a.equals(b);
+        String expResult = "JohnSmith34";
+        String result = l1.getUsername();
         assertEquals(expResult, result);
-        fail("jshjsjhk");
         
+    }
+    
+    @Test
+    public void testGetUsername() {
+        ArrayList<Module> modList =new ArrayList<Module>();
+        System.out.println("getUsername");
+        
+        LocalDate semStart = LocalDate.of(2022, 9, 7);
+        LocalDate semFinish = LocalDate.of(2023, 5, 1);
+        
+        Course c1= new Course("Computer Science",modList,semStart,semFinish);
+        
+        ArrayList<Course> courseList = new ArrayList<Course>();
+        LocalDate DOB=LocalDate.of(2001, 1, 8);
+        
+        Student student1 = new Student("Bob",21, DOB,135243,modList,c1);
+        
+        String expResult = "Bob21";
+        String result = student1.getUsername();
+        assertEquals(expResult, result);
     }
 
     
