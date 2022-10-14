@@ -24,5 +24,9 @@ public class Module {
                 
                 
     };
+
+    public String getName() {
+        return name;
+    }
     
 }

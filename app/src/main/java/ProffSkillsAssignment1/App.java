@@ -4,20 +4,10 @@
 package ProffSkillsAssignment1;
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.ArrayList;
 public class App {
     public String getGreeting() {
         return "Hello World!";
     }
 
-    public static void main(String[] args) {
-        System.out.println("hello");
-        
-        LocalDate date =LocalDate.of(1990, Month.MARCH, 4);
-        //Student student = new Student("Jo",20,date,46546546);
-        //String username = student.getUsername();
-        //System.out.println(username);
-        
-    }
-    
-    
-}
+}    

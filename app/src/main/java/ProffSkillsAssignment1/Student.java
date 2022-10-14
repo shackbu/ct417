@@ -33,4 +33,18 @@ public class Student {
         
     }
     
+    @Override
+    public String toString() {
+        String strng="";
+        strng+=name+"\nModules:\n";
+        for (Module mod : myModules){
+            strng+=mod.getName()+"\n";
+        }  
+        strng+="\nCourse(s):";
+        for (Course c : myCourses){
+            strng+=c.getName()+"\n";
+        }    
+        return strng; 
+    }
+    
 }
