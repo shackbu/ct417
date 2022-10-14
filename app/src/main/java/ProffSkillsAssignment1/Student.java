@@ -13,9 +13,9 @@ public class Student {
     int ID;
     String username;
     ArrayList<Module> myModules;
-    ArrayList<Course> myCourses;
+    Course myCourse;
     
-    public Student(String name,int age,LocalDate DOB,int ID,ArrayList<Module> myModules,ArrayList<Course> myCourses)
+    public Student(String name,int age,LocalDate DOB,int ID,ArrayList<Module> myModules,Course myCourse)
     {
         this.name=name;
         this.age=age;
@@ -23,7 +23,7 @@ public class Student {
         this.ID=ID;
         username=this.getUsername();
         this.myModules = myModules;
-        this.myCourses = myCourses;
+        this.myCourse = myCourse;
     };
     
     public String getUsername()
@@ -36,14 +36,12 @@ public class Student {
     @Override
     public String toString() {
         String strng="";
-        strng+=name+"\nModules:\n";
+        strng+=this.getUsername()+"\nModules:\n";
         for (Module mod : myModules){
             strng+=mod.getName()+"\n";
         }  
-        strng+="\nCourse(s):";
-        for (Course c : myCourses){
-            strng+=c.getName()+"\n";
-        }    
+        strng+="\nCourse): "+ myCourse;
+        
         return strng; 
     }
     
